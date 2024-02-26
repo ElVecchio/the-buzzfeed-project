@@ -1,5 +1,6 @@
-export type Answerdata = {
-  question_id:number,
+export type AnswerData = {
   id:number,
-  answer_text:string,
+  question_id:number,
+  text:string,
+  weight:number
 }
