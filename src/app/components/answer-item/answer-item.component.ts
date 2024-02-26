@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Answerdata as AnswerData } from '../../models/answer.data';
+import { AnswerData as AnswerData } from '../../models/answer.data';
 
 @Component({
   selector: 'app-answer-item',
@@ -10,8 +10,8 @@ export class AnswerItemComponent {
 
   @Input() answer:AnswerData = {
     id : 0,
-    answer_text : '',
-    question_id : 0
+    text : '',
+    question_id : 0,
+    weight:0
   }
-
 }

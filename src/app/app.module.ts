@@ -12,6 +12,8 @@ import { DisplayComponent } from './pages/display/display.component';
 import { ResultComponent } from './pages/result/result.component';
 import { FooterModule } from './components/shared/footer/footer.module';
 import { AnswerGroupModule } from './components/answer-group/answer-group.module';
+import { ThemeComponent } from './components/theme/theme.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { AnswerGroupModule } from './components/answer-group/answer-group.module
     QuestionDisplayComponent,
     MenuComponent,
     DisplayComponent,
-    ResultComponent
+    ResultComponent,
+    ThemeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FooterModule,
-    AnswerGroupModule
+    AnswerGroupModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Answerdata } from '../../models/answer.data';
+import { AnswerData } from '../../models/answer.data';
 
 @Component({
   selector: 'app-answer-group',
@@ -7,5 +7,5 @@ import { Answerdata } from '../../models/answer.data';
   styleUrl: './answer-group.component.css'
 })
 export class AnswerGroupComponent {
-  @Input() answers:Answerdata[] = [];
+  @Input() answers:AnswerData[] = [];
 }
