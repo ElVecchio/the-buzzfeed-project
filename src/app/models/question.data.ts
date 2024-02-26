@@ -1,4 +1,8 @@
+import { AnswerData } from "./answer.data"
+
 export type QuestionData = {
+  theme_id?:number,
   id:number,
-  question_text:string
+  text:string,
+  answers?:AnswerData[]
 }
