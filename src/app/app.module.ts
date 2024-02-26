@@ -11,6 +11,7 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { DisplayComponent } from './pages/display/display.component';
 import { ResultComponent } from './pages/result/result.component';
 import { FooterModule } from './components/shared/footer/footer.module';
+import { AnswerGroupModule } from './components/answer-group/answer-group.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterModule } from './components/shared/footer/footer.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FooterModule
+    FooterModule,
+    AnswerGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
