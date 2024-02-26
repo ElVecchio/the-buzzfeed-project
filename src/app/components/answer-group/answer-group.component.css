@@ -1,0 +1,14 @@
+.answers-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 550px;
+  min-height: 170px;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding:20px;
+}
