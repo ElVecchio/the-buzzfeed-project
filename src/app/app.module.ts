@@ -14,6 +14,7 @@ import { FooterModule } from './components/shared/footer/footer.module';
 import { AnswerGroupModule } from './components/answer-group/answer-group.module';
 import { ThemeComponent } from './components/theme/theme.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuizzComponent } from './components/quizz/quizz.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     DisplayComponent,
     ResultComponent,
-    ThemeComponent
+    ThemeComponent,
+    QuizzComponent
   ],
   imports: [
     BrowserModule,

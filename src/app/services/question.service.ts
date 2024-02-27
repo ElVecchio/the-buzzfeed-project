@@ -1,48 +1,29 @@
 import { Injectable } from '@angular/core';
 import { QuestionData } from '../models/question.data';
+import QuizzData from '../models/quizz.data';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService{
 
-  theme_id : number | undefined;
-
   constructor() { }
 
-  saveQuestions(questions:Array<QuestionData>):void{
-    localStorage.setItem('questions', JSON.stringify(questions));
-  }
+  quizz_data:QuizzData[]=[];
 
-  protected loadQuestions():Array<QuestionData> | null | undefined{
-
-    let local_data = localStorage.getItem('questions');
-
-    if(local_data!=null){
-      let questions:Array<QuestionData> = JSON.parse(local_data);
-      return this.theme_id==undefined ? questions : questions.filter(f => f.theme_id == this.theme_id);
-    }else{
-      return null;
-    }
-  }
-
-  protected sortQuestion():QuestionData{
-
-    let data = this.loadQuestions();
-
-    if(data!=null && data.length > 0){
-
-      let max = data.length;
-      let question_index = Math.floor(Math.random() * max)
-      return data[question_index];
-
+  protected getRandomQuestion():QuizzData{
+    if(this.quizz_data!=null && this.quizz_data.length > 0){
+      let sorted_index = Math.floor(Math.random() * this.quizz_data.length)
+      let res:any = this.quizz_data[sorted_index];
+      return res;
     }else{
       throw new Error('Nenhuma pergunta encontrada. Verifique se os dados iniciais foram iunicializados.');
     }
   }
 
-  loadQuestion(theme_id:number | undefined):QuestionData{
-    this.theme_id = theme_id;
-    return this.sortQuestion();
+  getQuestion(quizz_data:QuizzData[]):QuizzData{
+    this.quizz_data = quizz_data;
+    return this.getRandomQuestion();
   }
 }

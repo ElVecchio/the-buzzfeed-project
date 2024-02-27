@@ -7,5 +7,12 @@ import { AnswerData } from '../../models/answer.data';
   styleUrl: './answer-group.component.css'
 })
 export class AnswerGroupComponent {
-  @Input() answers:AnswerData[] = [];
+
+
+  @Input() answers_data:AnswerData[] = [];
+
+
 }
+
+
+
