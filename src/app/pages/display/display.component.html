@@ -15,23 +15,8 @@
     padding:20px;
   }
 
-  .question-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 100%;
-    min-width: 550px;
-    min-height: 170px;
-    background-color: #25242F;
-    border: 5px solid #aaff2a91;
-    border-radius: 10px;
-    margin: 20px 0px;
-    padding:20px;
-  }
 
+/*
   .answers-container{
     display: flex;
     flex-direction: row;
@@ -45,8 +30,8 @@
     border-radius: 10px;
     margin: 0px 0px;
     padding:20px;
-  }
-
+  } */
+/*
   .answer-item-container{
     display: flex;
     flex-direction: column;
@@ -67,18 +52,21 @@
     border: 5px solid rgb(128, 100, 136)91;
     cursor: pointer;
   }
-
+ */
 
 </style>
 
 <div class="display-container">
 
-  <div class="question-container">
-    <app-question-display/>
-  </div>
+  <!-- <div class="question-container"> -->
+    <!-- <app-question-display id="questionDisplay" /> -->
+  <!-- </div> -->
 
-  <div class="answers-container">
-   <app-answer-group />
-  </div>
+  <!-- <div class="answers-container">
+   <app-answer-group id="answersGroup" />
+  </div> -->
+
+  <app-quizz #quizz/>
+
 </div>
 
