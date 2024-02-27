@@ -13,8 +13,12 @@ export class DisplayComponent implements OnInit, OnDestroy {
 
   quizz_data:Array<QuizzData>=[];
   selectedQuizzes:QuizzData[]=[];
-
-  @ViewChild('quizz') quizzRef!: QuizzComponent;
+  quizz_item:QuizzData={
+    id:0,
+    profiles:[],
+    questions:[],
+    title:''
+  }
 
   constructor(private quizzService:QuizzService, private quest:QuestionService){
   }
@@ -24,7 +28,6 @@ export class DisplayComponent implements OnInit, OnDestroy {
       next:result =>{
         if(result!=undefined && result!=null){
           this.quizz_data = result;
-          this.sortQuestion();
         }
       },
       error: err =>{
@@ -33,22 +36,10 @@ export class DisplayComponent implements OnInit, OnDestroy {
     });
   }
 
-  sortQuestion():void{
-
-    //raffle themes and questions
-    let quizz_item = this.quest.getQuestion(this.quizz_data);
-    //add the selected quizz
-    this.selectedQuizzes.push(quizz_item);
-    //remove the selected item from array this way don't need control by index
-    // and avoid show duplicated question
-    this.quizz_data.splice(this.quizz_data.indexOf(quizz_item), 1)
-  }
-
   ngOnInit(): void {
     this.loadQuizzData();
   }
 
   ngOnDestroy(): void {
-
   }
 }

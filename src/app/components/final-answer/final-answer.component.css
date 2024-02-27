@@ -1,0 +1,37 @@
+.final-score-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.final-score-container > .content{
+  border: 20px solid #44ff0066;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 80px;
+  padding: 20px;
+  align-items: center;
+}
+
+.final-score-container > .content > span{
+  font-family: "Lobster", arial;
+  justify-content: center;
+  display: flex;
+  font-size: 3em;
+}
+
+.final-score-container > .content > img{
+  justify-content: center;
+  display: flex;
+  height:350px;
+  width:350px;
+}
+
+.final-score-container > .content > p{
+  justify-content: center;
+  display: flex;
+  padding:10px;
+}

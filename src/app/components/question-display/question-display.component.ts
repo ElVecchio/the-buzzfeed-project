@@ -1,21 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { QuestionData } from '../../models/question.data';
-import QuizzData from '../../models/quizz.data';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-question-display',
   templateUrl: './question-display.component.html',
   styleUrl: './question-display.component.css'
 })
-export class QuestionDisplayComponent implements OnInit{
+export class QuestionDisplayComponent implements OnInit, OnChanges, OnDestroy{
 
-  @Input() quizz_data:any;
 
-  question_data!:QuestionData;
+  @Input() question_text : string='';
+  question:string='';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.question_text!=''){
+      this.question = this.question_text;
+    }
+  }
 
   ngOnInit(): void {
-    if(this.quizz_data){
-      this.question_data = this.quizz_data.questions[0];
-    }
+  }
+
+  ngOnDestroy(): void {
   }
 }

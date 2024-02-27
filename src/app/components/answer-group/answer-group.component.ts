@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AnswerData } from '../../models/answer.data';
 
 @Component({
@@ -8,10 +8,14 @@ import { AnswerData } from '../../models/answer.data';
 })
 export class AnswerGroupComponent {
 
-
+  @Output() public getUserPickedAnswer:EventEmitter<any> = new EventEmitter();
+  @Output() public selected_answer:any= {id:0, weight:0};
   @Input() answers_data:AnswerData[] = [];
 
-
+  answerItemClick(args:any) {
+    this.selected_answer = {id:args.id, weight:args.weight};
+    this.getUserPickedAnswer.emit(this.selected_answer);
+  }
 }
 
 

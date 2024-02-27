@@ -1,6 +1,16 @@
-<div class="display-container">
-  <h3>{{ title }}</h3>
-  <!-- <app-question-display id="questionDisplay" /> -->
-  <!-- <app-answer-group id="answersGroup" /> -->
+
+
+<div class="game_selector_container" *ngIf="show_result">
+  <!-- <button (click)="restart('replay')">Tentar de Novo</button> -->
+  <button (click)="restart('new')">Novo Quizz</button>
 </div>
+
+<div class="display-container" >
+  <h3 *ngIf="!show_result">{{ title }}</h3>
+  <app-question-display id="questionDisplay" [question_text]="question" *ngIf="!show_result" />
+  <app-answer-group id="answersGroup" [answers_data]="answers" (getUserPickedAnswer)="addUserAnswerPicker($event)" *ngIf="!show_result"/>
+  <app-final-answer *ngIf="show_result" [profile]="final_profile" [final_score]="final_score"/>
+
+</div>
+
 
