@@ -59,14 +59,15 @@
 <div class="display-container">
 
   <!-- <div class="question-container"> -->
-    <!-- <app-question-display id="questionDisplay" /> -->
+  <!-- <app-question-display id="questionDisplay" [quizz_data]="quizz_item"/> -->
   <!-- </div> -->
 
   <!-- <div class="answers-container">
    <app-answer-group id="answersGroup" />
   </div> -->
 
-  <app-quizz #quizz/>
+  <app-quizz [quizz_data]="quizz_data"/>
+
 
 </div>
 

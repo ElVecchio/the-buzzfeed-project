@@ -15,6 +15,4 @@ export class QuizzService {
     let quizz_data:any = this.http.get('assets/json/data.json');
     return quizz_data;
   }
-
-
 }

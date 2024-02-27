@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AnswerData as AnswerData } from '../../models/answer.data';
 
 @Component({
@@ -8,10 +8,18 @@ import { AnswerData as AnswerData } from '../../models/answer.data';
 })
 export class AnswerItemComponent {
 
+  @Output() public answerClickedEvent: EventEmitter<any> = new EventEmitter();
   @Input() answer:AnswerData = {
     id : 0,
     text : '',
     question_id : 0,
     weight:0
   }
+
+  answerClick() {
+    this.answerClickedEvent.emit({id:this.answer.id, weight:this.answer.weight});
+  }
+
 }
+
+

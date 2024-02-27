@@ -1,4 +1,4 @@
 
 <div class="answers-container">
-  <app-answer-item *ngFor="let item of answers_data" [answer]="item"/>
+  <app-answer-item *ngFor="let item of answers_data" [answer]="item" (answerClickedEvent)="answerItemClick($event)"/>
 </div>
